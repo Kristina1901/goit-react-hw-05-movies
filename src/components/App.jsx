@@ -2,6 +2,8 @@ import { lazy, Suspense } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Navigation from './Navigation';
 
+
+
 const HomePage = lazy(() =>
   import('./HomePage' /* webpackChunkName: "home-page" */),
 );
