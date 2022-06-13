@@ -16,11 +16,8 @@ const MoviesPage = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-
     if (!filmQuery) return;
     navigate({ ...location, search: `query=${filmQuery}` });
-
-    setFilmQuery('');
   };
 
   useEffect(() => {
@@ -29,6 +26,7 @@ const MoviesPage = () => {
       .searchMovies(searchQuery)
       .then(setSearchedFilms)
       .catch(console.log);
+    setFilmQuery(searchQuery);
   }, [searchQuery]);
 
   return (
